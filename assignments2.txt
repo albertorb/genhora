@@ -1,0 +1,21 @@
+:Eustaquio
+Matematicas 1 Matematicas 1 Matematicas 1 Matematicas 1
+Matematicas 2 Matematicas 2 Matematicas 2 Matematicas 2
+Matematicas 3 Matematicas 3 Matematicas 3 Matematicas 3
+Matematicas 4 Matematicas 4 Matematicas 4 Matematicas 4
+Sustitucion 2 Sustitucion 2
+Tutoria 1 Tutoria 1
+:Menganito
+Historia 1 Historia 1 Historia 1
+Historia 2 Historia 2 Historia 2
+Historia 3 Historia 3 Historia 3
+Historia 4 Historia 4 Historia 4
+Sustitucion 1 Sustitucion 1
+Tutoria 2 Tutoria 2
+:Fulanito
+Frances 1 Frances 1
+Tutoria 3 Tutoria 3
+Frances 2 Frances 2
+Frances 3 Frances 3
+Frances 4 Frances 4
+Sustitucion 3 Sustitucion 3

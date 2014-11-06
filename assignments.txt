@@ -1,0 +1,18 @@
+:Eustaquio
+Matematicas 2 Matematicas 2 Matematicas 2 Matematicas 2
+Quimica 2 Quimica 2
+Historia 2 Historia 2 Historia 2
+Fisica 2 Fisica 2 Fisica 2
+Tutoria 2 Tutoria 2
+:Menganito
+Geografia 1 Geografia 1
+Ingles 1 Ingles 1 Ingles 1
+Quimica 1 Quimica 1
+Fisica 1 Fisica 1 Fisica 1
+Tutoria 1 Tutoria 1
+:Fulanito
+Frances 1 Frances 1
+Historia 1 Historia 1 Historia 1
+Lengua 3 Lengua 3 Lengua 3 Lengua 3
+Tutoria 3 Tutoria 3
+Frances 2 Frances 2
