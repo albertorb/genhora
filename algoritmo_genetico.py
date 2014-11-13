@@ -29,7 +29,7 @@ from collections import defaultdict
 
 NUM_GENERATIONS = 50
 TAM_POPULATION = 200
-PROB_MUTATION = 20
+PROB_MUTATION = 70
 # # atributos metodo selection
 PERC_POP = 100
 PERC_RANDOM = 20
@@ -110,7 +110,7 @@ def inputData():
 
 def initIndividual():
     """ Generates random data for the individual solution """
-    MAXIMUM_HOURS_BY_LAW = 5  # Numero maximo de asignaturas que puede, por ley, impartir un profesor por dia
+    #MAXIMUM_HOURS_BY_LAW = 3  # Numero maximo de asignaturas que puede, por ley, impartir un profesor por dia
     HOURS_PER_DAY = 8
     ind = list()
     zeros = [0]
@@ -121,7 +121,7 @@ def initIndividual():
             aux.append(str(elem.name) + str(elem.group))
 
         for elem in aux:
-            SUBJECTS_REPETITIONS[elem]=aux.count(elem)
+            SUBJECTS_REPETITIONS[elem] = aux.count(elem)
 
         random.shuffle(aux)
         aux2 = []
@@ -222,41 +222,41 @@ def mutation(chromosome):
     ini = 0
     fin = 0
     for prof in range(PROFESSOR_NUMBER):
-        for i in range(0 + ini, 8 + fin):
+        for i in range(0 + ini, 8 + fin - 1):
 
             checkprob = random.randint(0, 100)
             if checkprob <= PROB_MUTATION:
-                rand1 = random.randint(0 + ini, 8 + fin)
-                rand2 = random.randint(0 + ini, 8 + fin)
+                rand1 = random.randint(0 + ini, 8 + fin - 1)
+                rand2 = random.randint(0 + ini, 8 + fin - 1)
                 # UTILIZO randint porque sample no me deja especificar el rango concreto de numeros, es decir, de 5 a 10 por ejemplo, sino que es un rango tal que range(200)
                 while rand1 == rand2:
-                    rand2 = random.randint(0 + ini, 8 + fin)
+                    rand2 = random.randint(0 + ini, 8 + fin - 1)
                 h1 = chromosome[rand1]
                 h2 = chromosome[rand2]
                 chromosome[rand2] = h1
                 chromosome[rand1] = h2
                 # Se intercambian horas del mismo dia
 
-        for i in range(8 + ini, 16 + fin):
+        for i in range(8 + ini, 16 + fin - 1):
 
             checkprob = random.randint(0, 100)
             if checkprob <= PROB_MUTATION:
-                rand1 = random.randint(8 + ini, 16 + fin)
-                rand2 = random.randint(8 + ini, 16 + fin)
+                rand1 = random.randint(8 + ini, 16 + fin - 1)
+                rand2 = random.randint(8 + ini, 16 + fin - 1)
                 # UTILIZO randint porque sample no me deja especificar el rango concreto de numeros, es decir, de 5 a 10 por ejemplo, sino que es un rango tal que range(200)
                 while rand1 == rand2:
-                    rand2 = random.randint(8 + ini, 16 + fin)
+                    rand2 = random.randint(8 + ini, 16 + fin - 1)
                 h1 = chromosome[rand1]
                 h2 = chromosome[rand2]
                 chromosome[rand2] = h1
                 chromosome[rand1] = h2
 
-        for i in range(16 + ini, 24 + fin):
+        for i in range(16 + ini, 24 + fin - 1):
 
             checkprob = random.randint(0, 100)
             if checkprob <= PROB_MUTATION:
-                rand1 = random.randint(16 + ini, 24 + fin)
-                rand2 = random.randint(16 + ini, 24 + fin)
+                rand1 = random.randint(16 + ini, 24 + fin - 1)
+                rand2 = random.randint(16 + ini, 24 + fin - 1)
                 # UTILIZO randint porque sample no me deja especificar el rango concreto de numeros, es decir, de 5 a 10 por ejemplo, sino que es un rango tal que range(200)
                 while rand1 == rand2:
                     rand2 = random.randint(16 + ini, 24 + fin)
@@ -265,12 +265,12 @@ def mutation(chromosome):
                 chromosome[rand2] = h1
                 chromosome[rand1] = h2
 
-        for i in range(24 + ini, 32 + fin):
+        for i in range(24 + ini, 32 + fin - 1):
 
             checkprob = random.randint(0, 100)
             if checkprob <= PROB_MUTATION:
-                rand1 = random.randint(24 + ini, 32 + fin)
-                rand2 = random.randint(24 + ini, 32 + fin)
+                rand1 = random.randint(24 + ini, 32 + fin - 1)
+                rand2 = random.randint(24 + ini, 32 + fin - 1)
                 # UTILIZO randint porque sample no me deja especificar el rango concreto de numeros, es decir, de 5 a 10 por ejemplo, sino que es un rango tal que range(200)
                 while rand1 == rand2:
                     rand2 = random.randint(24 + ini, 32 + fin)
@@ -279,7 +279,7 @@ def mutation(chromosome):
                 chromosome[rand2] = h1
                 chromosome[rand1] = h2
 
-        for i in range(32 + ini, 40 + fin):
+        for i in range(32 + ini, 40 + fin - 1):
 
             checkprob = random.randint(0, 100)
             if checkprob <= PROB_MUTATION:
@@ -381,7 +381,7 @@ def crosover(ind1, ind2):
                         indx = c1_x.index(0)
                         c1_x[indx] = elem
                     else:
-                        pass #TODO creo que este caso no se va a dar nunca
+                        pass  # TODO creo que este caso no se va a dar nunca
 
             # extendemos el nuevo hijo con un este nuevo dia de un profesor
             child1.extend(c1_x)
@@ -413,8 +413,7 @@ def crosover(ind1, ind2):
                         indx = c2_x.index(0)
                         c2_x[indx] = elem
                     else:
-                        pass #TODO creo que este caso no se va a dar nunca
-
+                        pass  # TODO creo que este caso no se va a dar nunca
 
             child2.extend(c2_x)
             # FIN CHILD 2
@@ -426,9 +425,9 @@ def crosover(ind1, ind2):
 
             # c2_1x = list(c1_1)  # lista provisional para cruce
             # for num in range(c2_1.__len__()):
-            #     if not c2_1[num] in ch1:  # TODO no se mantienen las horas en su sitio
-            #         c2_1x[num] = c2_1[
-            #             num]  # si la asignatura no esta repetida, entonces la introducimos en el nuevo hijo, en caso contrario mantiene asignacion de padre.
+            # if not c2_1[num] in ch1:  # TODO no se mantienen las horas en su sitio
+            # c2_1x[num] = c2_1[
+            # num]  # si la asignatura no esta repetida, entonces la introducimos en el nuevo hijo, en caso contrario mantiene asignacion de padre.
             #
             # c2_2x = list(c1_2)
             # for num in range(c2_2.__len__()):
@@ -464,7 +463,9 @@ def crosover(ind1, ind2):
             else:
                 while child2.count(elem) > SUBJECTS_REPETITIONS[elem]:
                     child2[child2.index(elem)] = 0
-        #TODO comentar en memoria que la anterior comprobacion es computacionalmente inviable!!!!!!
+                    # TODO comentar en memoria que la anterior comprobacion es computacionalmente inviable!!!!!!
+
+
 
     return child1, child2
 
@@ -503,58 +504,23 @@ def fitness(ind):
     # ###########---------  1  --------------#############
     """1º Ver si un profesor da más asignaturas al día de las permitidas."""
     init = 0
-    fin = 40  # 8 h. per day * 5 days
+    fin = 39  # 8 h. per day * 5 days
 
     res = 999
     for i in range(PROFESSOR_NUMBER):
 
         init_day = 0
-        fin_day = 8
+        fin_day = 7
         timetable = ind[init:fin]
 
-        for sbj in PARSE_ASSIGNMENTS[i]:
-            cnt = ind.count(sbj)
-            if cnt == 4:
-                res -= 300
-            elif cnt > 4:
-                res += 500
-            else:
-                res += 150
-
         for j in range(5):  # 5 dias a la semana
-            count = 0
             t = timetable[init_day:fin_day]
-            # print(t)
             count = 8 - t.count(0)
             if count > MAXIMUM_HOURS_BY_LAW:
                 res += 999
                 break  # muy ilegal
             else:
                 res -= 66  # quita un maximo de 5*66 = 330
-
-            for elem in t:  # son 8 iteraciones
-                # comprobar que el profesor da las asignaturas que tenia asignadas de inicio en el archivo .txt
-                if elem not in PARSE_ASSIGNMENTS[
-                    i]:  # # TODO: de momento sigo obteniendo resultados con asignaturas que no son del profesor
-                    # print(str(elem)+" not in "+str(PARSE_ASSIGNMENTS[i]))
-                    res += 999
-                    break  # muy ilegal ya que un profesor no esta dando la asignatura que le corresponde
-
-            else:  # el individuo mantiene las asignaciones de subjects en el profesor
-                res -= 66
-
-            # comprobar que no se repita una asignatura el mismo dia
-            for pos in range(SUBJECTS_NUMBER):
-                counter = t.count(pos)
-                if pos == 0 and counter > 6:  # Hora libre si puede estar varias veces un mismo dia
-                    res += 200
-                elif counter == 0:
-                    pass
-                elif counter == 1:
-                    res -= 100
-                else:
-                    res += 9999 * (
-                        counter - 1)  # -1 ya que si aparece una vez, no debe penalizar. En caso de q no aparezca no hay porque penalizar
 
             init_day += 8
             fin_day += 8
@@ -563,6 +529,7 @@ def fitness(ind):
             res = 0
         init += 40
         fin += 40
+    #clock = random.sample(0,PROFESSOR_NUMBER)
     return res
 
 
@@ -622,7 +589,7 @@ def prueba():
         print('Aplicando crosover en generacion ' + str(count))
         res_n = do_crossover(res)
         print('Mutando generacion ' + str(count))
-        # do_mutation(res_n)
+        do_mutation(res_n)
         # print('Seleccionando individuos de la generacion ' + str(count))
         # selected = selection(res_n)
 
@@ -673,7 +640,7 @@ def prueba():
 
 
 prueba()
-
+#print(sorted(initPopulation(),key=cmp_elite))
 
 # print(c1)
 # print(len(c1))
