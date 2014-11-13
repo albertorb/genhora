@@ -1,4 +1,4 @@
-# #-encoding: utf-8
+    # #-encoding: utf-8
 # Algoritmo genético TFG
 
 # Cada cromosoma es una lista de números que representa
@@ -132,7 +132,7 @@ def initIndividual():
         thursday = []
         friday = []
 
-        for n in range(4):
+        for n in range(4): # range(4) porque es el maximo de asginaturas por dia que admitimos
             if aux.__len__() > 0:
                 if aux[0] not in monday:
                     monday.append(aux.pop(0))
@@ -310,32 +310,28 @@ def do_mutation(population):
         res.append(mutation(chrom))
     return res
 
+def checkGroups(individuo):
+    for day in range(5): # 5 dias de la semana
+        for hour in range(8): # 0 al 7, no del 1 al 8
+            auxlist = []
+            profcounter = 0
+            counter = 0
+            while counter < PROFESSOR_NUMBER:
+                subject = individuo[hour+profcounter]
+                if subject == 0:
+                    pass
+                else:
+                    group = subject[-1]
+                    auxlist.append(group) # TODO esto no funcionaría si tuviesemos mas de 9 grupos
+                profcounter += 40
+                counter += 1
+            for elem in auxlist:
+                if auxlist.count(elem)>1:
+                    return False
+    return True
 
 def crosover(ind1, ind2):
-    # r1 = random.randint(1, len(ind1) - 1)
-    # r2 = random.randint(1, len(ind1) - 1)
-    # r3 = random.randint(1, len(ind1) - 1)
-    # r4 = random.randint(1, len(ind1) - 1)
 
-    # Con esto se asegura la unicidad de pivotes sin tener que comprobarlo
-    """rand_nums = list(random.sample(range(0, 40 * PROFESSOR_NUMBER),
-                                   40 * PROFESSOR_NUMBER))  # 40 --> Franjas horarias * dias semana = datos 1 profesor
-    random.shuffle(rand_nums)
-    r1 = rand_nums.pop()
-    r2 = rand_nums.pop()
-    r3 = rand_nums.pop()
-    r4 = rand_nums.pop()
-
-    pl = [r1, r2, r3, r4]  # pivotes unicos
-    pl.sort()
-
-    ch1_1 = ind1[pl[0]:pl[1]]
-    ch1_2 = ind1[pl[2]:pl[3]]
-    ch2_1 = ind2[pl[0]:pl[1]]
-    ch2_2 = ind2[pl[2]:pl[3]]
-
-    child1 = ind1[:pl[0]] + ch2_1 + ind1[pl[1]:pl[2]] + ch2_2 + ind1[pl[3]:]
-    child2 = ind2[:pl[0]] + ch1_1 + ind2[pl[1]:pl[2]] + ch1_2 + ind2[pl[3]:]"""
     ini = 0
     fin = 0
     child1, child2 = list(), list()
@@ -417,35 +413,6 @@ def crosover(ind1, ind2):
 
             child2.extend(c2_x)
             # FIN CHILD 2
-            # c2_1 = ch2[r1[0]:r1[1]]
-            # c2_2 = ch2[r1[2]:r1[3]]
-
-            # c1_1 = ch1[r1[0]:r1[1]]
-            # c1_2 = ch1[r1[2]:r1[3]]
-
-            # c2_1x = list(c1_1)  # lista provisional para cruce
-            # for num in range(c2_1.__len__()):
-            # if not c2_1[num] in ch1:  # TODO no se mantienen las horas en su sitio
-            # c2_1x[num] = c2_1[
-            # num]  # si la asignatura no esta repetida, entonces la introducimos en el nuevo hijo, en caso contrario mantiene asignacion de padre.
-            #
-            # c2_2x = list(c1_2)
-            # for num in range(c2_2.__len__()):
-            #     if not c2_2[num] in ch1:  # TODO no se mantienen las horas en su sitio
-            #         c2_2x[num] = c2_2[num]
-            #
-            # c1_1x = list(c2_1)
-            # for num in range(c1_1.__len__()):
-            #     if not c1_1[num] in ch2:  # TODO no se mantienen las horas en su sitio
-            #         c1_1x[num] = c1_1[num]
-            #
-            # c1_2x = list(c2_2)
-            # for num in range(c1_2.__len__()):
-            #     if not c1_2[num] in ch2:  # TODO no se mantienen las horas en su sitio
-            #         c1_2x[num] = c1_2[num]
-            #
-            # child1.extend(ch1[:r1[0]] + c2_1x + ch1[r1[1]:r1[2]] + c2_2x + ch1[r1[3]:])
-            # child2.extend(ch2[:r1[0]] + c1_1x + ch2[r1[1]:r1[2]] + c1_2x + ch2[r1[3]:])
 
             rand_num = range(8 * i, 8 * j)
         ini += 40
@@ -464,7 +431,10 @@ def crosover(ind1, ind2):
                 while child2.count(elem) > SUBJECTS_REPETITIONS[elem]:
                     child2[child2.index(elem)] = 0
                     # TODO comentar en memoria que la anterior comprobacion es computacionalmente inviable!!!!!!
-
+    if checkGroups(child1) is False:
+        child1 = ind1
+    if checkGroups(child2) is False:
+        child1 = ind2
 
 
     return child1, child2
