@@ -19,3 +19,15 @@ Frances 2 Frances 2
 Frances 3 Frances 3
 Frances 4 Frances 4
 Sustitucion 3 Sustitucion 3
+:Gustavo
+Ingles 1 Ingles 1 Ingles 1
+Ingles 2 Ingles 2 Ingles 2
+Ingles 3 Ingles 3 Ingles 3
+Ingles 4 Ingles 4 Ingles 4
+:Pepa
+Latin 3 Latin 3 Latin 3
+:Josefina
+TIC 1 TIC 1 TIC 1
+TIC 2 TIC 2 TIC 2
+Sustitucion 4 Sustitucion 4
+

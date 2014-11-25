@@ -1,4 +1,4 @@
-    # #-encoding: utf-8
+# #-encoding: utf-8
 # Algoritmo genético TFG
 
 # Cada cromosoma es una lista de números que representa
@@ -23,52 +23,102 @@
 import random
 import fileparser
 from collections import defaultdict
+import tkinter as tk
+from tkinter import filedialog
+from collections import defaultdict
+import time
+import threading
 # from mpi4py import MPI
 
 # Inicializacion del programa
-
-NUM_GENERATIONS = 50
-TAM_POPULATION = 200
-PROB_MUTATION = 70
+NUM_GENERATIONS = 300
+TAM_POPULATION = 1000
+PROB_MUTATION = 60
 # # atributos metodo selection
 PERC_POP = 100
-PERC_RANDOM = 20
+PERC_RANDOM = 30
 # # end atributos metodo selection
 # # atributos metodo crossover
-PERC_POP_CROS = 20
+PERC_POP_CROS = 50
 # # end atributos metodo crossover
 PARSE_ASSIGNMENTS = defaultdict(set)
 SUBJECTS = [0]  # Inicializamos con 0 que representa hora libre
 SUBJECTS_REPETITIONS = defaultdict(int)
 PROFESSORS = []
-ASSIGNMENTS = fileparser.read_assignments()  # Cargamos los datos de inicio desde un archivo .txt utilizando un archivo python externo
 # Variables que guardaran la informacion recogida del archivo .txt, incicializandolas 0
 SUBJECTS_NUMBER = 0
 PROFESSOR_NUMBER = 0
-n = 0
-pos = 1
-subjs = []
-for prof, subjects in ASSIGNMENTS.items():
 
-    PROFESSORS.append(prof)
-    PARSE_ASSIGNMENTS[n].add(0)
 
-    for elem in subjects:
-        # if str(elem.name + elem.group) not in subjs:
-        # subjs.append(str(elem.name + elem.group))
-        # id = str((subjs.index(str(elem.name + elem.group)) + 1)*10) + '0' + str(
-        # pos)
-        id = str(elem.name + elem.group)
-        PARSE_ASSIGNMENTS[n].add(
-            id)  # estamos asignando a cada profesor un identificador unico, asi como a cada subj que posee.
-        SUBJECTS.append(elem)
-        print(elem.name + ' ' + elem.group + ' se corresponde con el id ' + id)
-        pos += 1
-    n += 1
-SUBJECTS_NUMBER = SUBJECTS.__len__()
-# print(PARSE_ASSIGNMENTS)
-for key in ASSIGNMENTS.keys():
-    PROFESSOR_NUMBER += 1
+######### FILE PARSER ##########
+
+# # parse file to get initial data
+
+class subject():
+    def __init__(self, name, group):
+        self.name = name
+        self.group = group
+
+
+def read_assignments(FILENAME):
+    """ Returns profs_asg which corresponds to a defaultdict whose keys
+    represents professor names and its values are related to the subjects that they have"""
+    profs_asg = defaultdict(set)
+    with open(FILENAME) as p:
+        for line in p.readlines():
+            if line[0] == ':':
+                professor = line[1:-1]
+            else:
+                repetitions = line.split()
+                len = int(repetitions.__len__() / 2)
+                for n in range(len):
+                    subjectName = repetitions.pop(0)
+                    group = repetitions.pop(0)
+                    subj = subject(subjectName, group)
+                    profs_asg[professor].add(subj)
+    for key, value in profs_asg.items():
+        print("\n")
+        print("Teacher " + key + " has assigned the following subjects:")
+        for subj in value:
+            print(subj.name + ' group ' + subj.group)
+    return profs_asg
+
+
+# ########### END FILE PARSER #########
+
+
+
+
+def initialize(FILENAME):
+    n = 0
+    pos = 1
+    subjs = []
+    global PROFESSOR_NUMBER
+
+    ASSIGNMENTS = fileparser.read_assignments(
+        FILENAME)  # Cargamos los datos de inicio desde un archivo .txt utilizando un archivo python externo
+    for prof, subjects in ASSIGNMENTS.items():
+
+        PROFESSORS.append(prof)
+        PARSE_ASSIGNMENTS[n].add(0)
+
+        for elem in subjects:
+            # if str(elem.name + elem.group) not in subjs:
+            # subjs.append(str(elem.name + elem.group))
+            # id = str((subjs.index(str(elem.name + elem.group)) + 1)*10) + '0' + str(
+            # pos)
+            id = str(elem.name + elem.group)
+            PARSE_ASSIGNMENTS[n].add(
+                id)  # estamos asignando a cada profesor un identificador unico, asi como a cada subj que posee.
+            SUBJECTS.append(elem)
+            print(elem.name + ' ' + elem.group + ' se corresponde con el id ' + id)
+            pos += 1
+        n += 1
+    SUBJECTS_NUMBER = SUBJECTS.__len__()
+    # print(PARSE_ASSIGNMENTS)
+    for key in ASSIGNMENTS.keys():
+        PROFESSOR_NUMBER += 1
+    return ASSIGNMENTS
 
 
 def initialize_attributes():
@@ -95,7 +145,7 @@ def parse_professor(data):
                 else:
 
                     prof_subj.append(
-                        subj[0:-1] + ' ' + subj[-1])  # obtenemos nombre de cada asignatura
+                        subj[0:-2] + ' ' + subj[-2::])  # obtenemos nombre de cada asignatura
             res.update({professor: prof_subj})
     return res
 
@@ -108,9 +158,9 @@ def inputData():
     return professor_number
 
 
-def initIndividual():
+def initIndividual(ASSIGNMENTS):
     """ Generates random data for the individual solution """
-    #MAXIMUM_HOURS_BY_LAW = 3  # Numero maximo de asignaturas que puede, por ley, impartir un profesor por dia
+    # MAXIMUM_HOURS_BY_LAW = 3  # Numero maximo de asignaturas que puede, por ley, impartir un profesor por dia
     HOURS_PER_DAY = 8
     ind = list()
     zeros = [0]
@@ -132,7 +182,7 @@ def initIndividual():
         thursday = []
         friday = []
 
-        for n in range(4): # range(4) porque es el maximo de asginaturas por dia que admitimos
+        for n in range(4):
             if aux.__len__() > 0:
                 if aux[0] not in monday:
                     monday.append(aux.pop(0))
@@ -193,32 +243,31 @@ def phenotype(genotype):
     return parse_professor(PROFESSOR_WEEK)
 
 
-def initPopulation():
-    return [initIndividual() for _ in range(TAM_POPULATION)]
+def initPopulation(asgmnts):
+    return [initIndividual(asgmnts) for _ in range(TAM_POPULATION)]
 
 
-def mutation(chromosome):
-    """
-    :param chromosome: entrada a modificar
-    :return: cromosoma mutado o sin mutar
-    """
-    # TODO mismo profesor
-    # TODO probabilidad
-    """checkprob = random.randint(0, 100)
-    if checkprob <= PROB_MUTATION:
-        p1 = random.randint(0, len(chromosome) - 1)
-        p2 = random.randint(0, len(chromosome) - 1)
-        while p2 == p1:
-            p1 = random.randint(0, len(chromosome) - 1)
-        if not p1 == 0 or p2 == 0:
-            a = chromosome[p1]
-            b = chromosome[p2]
-            chromosome[p1] = b
-            chromosome[p2] = a
-            return chromosome
-    else:        
-        return chromosome"""
+def mutation_day(chromosome):
+    ini = 0
+    fin = 0
 
+    for prof in range(PROFESSOR_NUMBER):
+        checkprob = random.randint(0, 100)
+        if checkprob <= PROB_MUTATION:
+            days_to_change = random.sample(range(5), 2)
+            first_day_start = 40 * days_to_change[0]
+            first_day_end = first_day_start + 40
+            first_day = list(chromosome[first_day_start:first_day_end])
+
+            second_day_start = 40 * days_to_change[1]
+            second_day_end = second_day_start + 40
+            second_day = list(chromosome[second_day_start:second_day_end])
+
+            chromosome[first_day_start:first_day_end] = second_day
+            chromosome[second_day_start:second_day_end] = first_day
+
+
+def mutation_hour(chromosome):
     ini = 0
     fin = 0
     for prof in range(PROFESSOR_NUMBER):
@@ -259,7 +308,7 @@ def mutation(chromosome):
                 rand2 = random.randint(16 + ini, 24 + fin - 1)
                 # UTILIZO randint porque sample no me deja especificar el rango concreto de numeros, es decir, de 5 a 10 por ejemplo, sino que es un rango tal que range(200)
                 while rand1 == rand2:
-                    rand2 = random.randint(16 + ini, 24 + fin)
+                    rand2 = random.randint(16 + ini, 24 + fin - 1)
                 h1 = chromosome[rand1]
                 h2 = chromosome[rand2]
                 chromosome[rand2] = h1
@@ -273,7 +322,7 @@ def mutation(chromosome):
                 rand2 = random.randint(24 + ini, 32 + fin - 1)
                 # UTILIZO randint porque sample no me deja especificar el rango concreto de numeros, es decir, de 5 a 10 por ejemplo, sino que es un rango tal que range(200)
                 while rand1 == rand2:
-                    rand2 = random.randint(24 + ini, 32 + fin)
+                    rand2 = random.randint(24 + ini, 32 + fin - 1)
                 h1 = chromosome[rand1]
                 h2 = chromosome[rand2]
                 chromosome[rand2] = h1
@@ -295,12 +344,11 @@ def mutation(chromosome):
 
         ini += 40
         fin += 40
-        # Muta en cada elemento excepto si es un 0
-        # for i in range(len(chromosome)):
-        # checkprob = random.randint(0, 100)
-        # if checkprob <= PROB_MUTATION:
-        # if not chromosome[i] == 0:
-        # chromosome[i] = random.randint(0, SUBJECTS_NUMBER - 1)
+
+
+def mutation(chromosome):
+    mutation_hour(chromosome)
+    mutation_day(chromosome)
     return chromosome
 
 
@@ -310,28 +358,8 @@ def do_mutation(population):
         res.append(mutation(chrom))
     return res
 
-def checkGroups(individuo):
-    for day in range(5): # 5 dias de la semana
-        for hour in range(8): # 0 al 7, no del 1 al 8
-            auxlist = []
-            profcounter = 0
-            counter = 0
-            while counter < PROFESSOR_NUMBER:
-                subject = individuo[hour+profcounter]
-                if subject == 0:
-                    pass
-                else:
-                    group = subject[-1]
-                    auxlist.append(group) # TODO esto no funcionaría si tuviesemos mas de 9 grupos
-                profcounter += 40
-                counter += 1
-            for elem in auxlist:
-                if auxlist.count(elem)>1:
-                    return False
-    return True
 
 def crosover(ind1, ind2):
-
     ini = 0
     fin = 0
     child1, child2 = list(), list()
@@ -431,17 +459,12 @@ def crosover(ind1, ind2):
                 while child2.count(elem) > SUBJECTS_REPETITIONS[elem]:
                     child2[child2.index(elem)] = 0
                     # TODO comentar en memoria que la anterior comprobacion es computacionalmente inviable!!!!!!
-    if checkGroups(child1) is False:
-        child1 = ind1
-    if checkGroups(child2) is False:
-        child1 = ind2
-
 
     return child1, child2
 
 
 def do_crossover(population):
-    res = list()
+    resu = list()
     len = population.__len__()
     for pos in range(int(len / 2)):
         p1 = random.randint(0, len - 1)
@@ -452,9 +475,9 @@ def do_crossover(population):
             p2 = random.randint(0, p1 - 1)
 
         c1, c2 = crosover(population[p1], population[p2])
-        res.append(c1)
-        res.append(c2)
-    return res
+        resu.append(c1)
+        resu.append(c2)
+    return resu
 
 
     # fitness
@@ -467,6 +490,29 @@ def do_crossover(population):
     2º Ver si un profesor da al mismo curso la misma asignatura más de una vez al día.
     3º Ver si varios profesores dan clase de la misma asignatura el mismo día al mismo curso, a la misma o disinta hora
     """
+
+
+def checkGroups(individuo):
+    res = 0
+    for day in range(5):  # 5 dias de la semana
+        for hour in range(8):  # 0 al 7, no del 1 al 8
+            auxlist = []
+            profcounter = 0
+            counter = 0
+            while counter < PROFESSOR_NUMBER:
+                subject = individuo[hour + profcounter]
+                if subject == 0:
+                    pass
+                else:
+                    group = subject[-2::]
+                    auxlist.append(group)  # funciona con grupos de 2 digitos tipo 2A 3B 4D
+                profcounter += 40
+                counter += 1
+            for elem in auxlist:
+                if auxlist.count(elem) > 1:
+                    # print('Incompatibilidad de horarios en el grupo ' + elem)
+                    res += 1
+    return res
 
 
 def fitness(ind):
@@ -499,7 +545,12 @@ def fitness(ind):
             res = 0
         init += 40
         fin += 40
-    #clock = random.sample(0,PROFESSOR_NUMBER)
+    check = checkGroups(ind)
+    if check > 0:
+        res += 10 * check
+    else:
+        res -= 1000
+    # clock = random.sample(0,PROFESSOR_NUMBER)
     return res
 
 
@@ -544,13 +595,10 @@ def selection(pop):
     # # ... depende de la seleccion que vayamos a elegir.
 
 
-def prueba():
-    # COMM=MPI.COMM_WORLD
-    # SIZE=COMM.Get_size() #Get number of proceses
-    # RANK=COMM.Get_rank() #Get id of own process
+def prueba(FILENAME):
+    asgmnts = initialize(FILENAME)
     count = NUM_GENERATIONS
-    res = initPopulation()
-    # print(" El fitness del mejor individuo es " + str(fitness(res[0])))
+    res = initPopulation(asgmnts)
 
     mejoresInd = []
     res = sorted(res, key=cmp_elite)
@@ -573,44 +621,42 @@ def prueba():
         mejoresInd.append(res[0])
         # print(phenotype(res[0]))
         # print(" El fitness del mejor individuo es " + str(fitness(res[0])))
-
-        """Para el modelo paralelo en islas,
-            cada Isla será una ejecución del algoritmo,
-            entre islas se comparten individuos(los X mejores individuos se envian) y 
-            los que recibimos se sustituyen por los X peores de la propia población.
-            Ahora se comunican en anillo procesos: 0->1->2->3->0"""
-
-        """d=(RANK+1)%SIZE
-        s=(RANK-1+SIZE)%SIZE
-        #Enviamos los 10 mejores        
-        indrecv=COMM.sendrecv(res[:10],dest=d,source=s,sendtag=1,recvtag=1)
-        COMM.Barrier() #Barerra de sincronización
-        #Sustituyo por los 10 peores
-        res=res[:TAM_POPULATION-10]+indrecv"""
         count -= 1
 
     mejoresInd = sorted(mejoresInd, key=cmp_elite)
     print(" El fitness del mejor individuo es " + str(fitness(mejoresInd[0])))
-    # print(phenotype(mejoresInd[0]))
+    f = open('scheduleByTeacher.txt', 'w')
+    print(mejoresInd[0])
     pheno = phenotype(mejoresInd[0])
     for prof, subj in pheno.items():
-        print('Horario del profesor ' + str(prof))
+        f.write('Horario del profesor ' + str(prof) + '\n')
         for num in range(subj.__len__()):
             if num == 0:
-                print('###### Lunes ######')
+                f.write('###### Lunes ###### \n')
             if num == 8:
-                print('###### Martes ######')
+                f.write('###### Martes ###### \n')
             if num == 16:
-                print('###### Miercoles######')
+                f.write('###### Miercoles###### \n')
             if num == 24:
-                print('###### Jueves ######')
+                f.write('###### Jueves ###### \n')
             if num == 32:
-                print('###### Viernes ######')
-            print(str(subj[num]))
+                f.write('###### Viernes ###### \n')
+            f.write(str(subj[num]) + '\n')
+
+    f.close()
+
+    f = open('scheduleGlobal.txt', 'w')
+
+    incompatibilidades = checkGroups(mejoresInd[0])
+    if incompatibilidades == 0:
+        print('No se pisan horarios entre grupos')
+    else:
+        print('Se pisan ' + str(incompatibilidades) + ' horarios entre grupos!!!')
 
 
-prueba()
-#print(sorted(initPopulation(),key=cmp_elite))
+# prueba('assignments.txt')
+
+# print(sorted(initPopulation(),key=cmp_elite))
 
 # print(c1)
 # print(len(c1))
@@ -618,7 +664,31 @@ prueba()
 # print(len(c2))
 
 
+# ###### GUI #######
 
+ROOT = tk.Tk()
+
+
+def run_algorithm():
+    prueba(filedialog.askopenfilename(initialdir="", title="choose your assignments file"))
+
+
+def startx():
+    # # base window
+
+    ROOT.title("Generador de horarios")
+    ROOT.minsize(300, 300)
+    ROOT.geometry("400x400")
+    btn_run = tk.Button(ROOT, text="Generate schedule", command=run_algorithm)
+    btn_run.pack()
+    ROOT.mainloop()
+
+    ## base window
+
+
+startx()
+
+# ###### END GUI ######
 
 
 

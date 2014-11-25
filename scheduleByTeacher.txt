@@ -1,0 +1,1012 @@
+Horario del profesor Fern
+###### Lunes ###### 
+IN 3D
+Libre
+Libre
+IN 4C
+Libre
+Libre
+LE 4A
+RE 3B
+###### Martes ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+IN 3C
+###### Miercoles###### 
+Libre
+LE 1A
+Libre
+LE 4A
+Libre
+Libre
+Libre
+Libre
+###### Jueves ###### 
+Libre
+Libre
+Libre
+LE 1A
+Libre
+Libre
+Libre
+LE 4A
+###### Viernes ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Horario del profesor Rica
+###### Lunes ###### 
+RE 4A
+Libre
+Libre
+Libre
+Libre
+Libre
+RE 3A
+Libre
+###### Martes ###### 
+RE 4D
+RE 1B
+RE 2B
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Miercoles###### 
+Libre
+Libre
+Libre
+RE 3C
+Libre
+RE 4B
+RE 4C
+Libre
+###### Jueves ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Viernes ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Horario del profesor Juan
+###### Lunes ###### 
+ET 4C
+Libre
+Libre
+CS 2A
+Libre
+Libre
+IN 1A
+RE 2A
+###### Martes ###### 
+ET 4C
+CS 2A
+Libre
+CS 1A
+RE 3D
+Libre
+Libre
+IN 4D
+###### Miercoles###### 
+Libre
+TU 4D
+Libre
+Libre
+Libre
+CS 2B
+Libre
+CS 2A
+###### Jueves ###### 
+CS 2B
+Libre
+Libre
+CS 1B
+Libre
+Libre
+CS 1A
+TU 4C
+###### Viernes ###### 
+Libre
+CS 1A
+Libre
+Libre
+CS 1B
+Libre
+CS 2B
+Libre
+Horario del profesor Osca
+###### Lunes ###### 
+IN 4D
+LE 1A
+RE 1A
+Libre
+Libre
+Libre
+IN 3C
+IN 3D
+###### Martes ###### 
+IN 3A
+CS 1B
+IN 3D
+Libre
+Libre
+IN 3C
+LE 1A
+Libre
+###### Miercoles###### 
+IN 3A
+IN 3B
+Libre
+Libre
+Libre
+IN 4C
+IN 3C
+Libre
+###### Jueves ###### 
+Libre
+IN 1A
+Libre
+Libre
+Libre
+Libre
+IN 3A
+IN 3B
+###### Viernes ###### 
+Libre
+IN 4D
+Libre
+Libre
+IN 4C
+IN 1A
+Libre
+Libre
+Horario del profesor Rosa
+###### Lunes ###### 
+Libre
+Libre
+AM 3D
+TE 3C
+Libre
+AM 3B
+Libre
+Libre
+###### Martes ###### 
+IN 4D
+Libre
+Libre
+Libre
+AM 3B
+Libre
+Libre
+Libre
+###### Miercoles###### 
+TE 3C
+TE 2A
+AM 3B
+Libre
+Libre
+Libre
+AM 3D
+Libre
+###### Jueves ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+TE 2A
+TE 3C
+Libre
+###### Viernes ###### 
+TE 2A
+Libre
+Libre
+Libre
+Libre
+Libre
+AM 3D
+Libre
+Horario del profesor MRos
+###### Lunes ###### 
+Libre
+CN 1A
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Martes ###### 
+Libre
+CN 1A
+Libre
+Libre
+Libre
+Libre
+Libre
+B 3C
+###### Miercoles###### 
+CN 1A
+Libre
+Libre
+B 3C
+Libre
+CN 1B
+Libre
+Libre
+###### Jueves ###### 
+Libre
+Libre
+CN 1B
+Libre
+Libre
+Libre
+Libre
+B 3A
+###### Viernes ###### 
+Libre
+B 3A
+Libre
+Libre
+Libre
+CN 1B
+Libre
+Libre
+Horario del profesor Simon
+###### Lunes ###### 
+Libre
+Libre
+Libre
+Libre
+FR 3C
+Libre
+Libre
+Libre
+###### Martes ###### 
+Libre
+FR 4C
+Libre
+FR 3C
+Libre
+Libre
+FR 4A
+Libre
+###### Miercoles###### 
+FR 3A
+Libre
+Libre
+Libre
+Libre
+Libre
+FR 2A
+Libre
+###### Jueves ###### 
+Libre
+Libre
+FR 4A
+Libre
+Libre
+FR 2A
+FR 3A
+Ed 3B
+###### Viernes ###### 
+Libre
+Libre
+Libre
+TU 3B
+Libre
+FR 2B
+Libre
+Ed 3A
+Horario del profesor Pepe
+###### Lunes ###### 
+Libre
+Libre
+IN 2A
+IN 4B
+IN 2B
+Libre
+Libre
+Libre
+###### Martes ###### 
+Libre
+IN 2B
+Libre
+IN 4B
+IN 2A
+Libre
+Libre
+Libre
+###### Miercoles###### 
+IN 2A
+IN 4B
+Libre
+Libre
+IN 2B
+Libre
+Libre
+Libre
+###### Jueves ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Viernes ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Horario del profesor A.Fa
+###### Lunes ###### 
+Libre
+F 3C
+TE 2B
+Libre
+Libre
+F 3A
+Libre
+Libre
+###### Martes ###### 
+CN 2A
+Libre
+F 4C
+CN 2B
+Libre
+Libre
+Libre
+Libre
+###### Miercoles###### 
+Libre
+CN 2A
+Libre
+F 4C
+Libre
+CN 2B
+Libre
+Libre
+###### Jueves ###### 
+CN 2B
+Libre
+Libre
+Libre
+TE 2B
+Libre
+Libre
+CN 2A
+###### Viernes ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Horario del profesor May
+###### Lunes ###### 
+GE 3A
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Martes ###### 
+Libre
+GE 3A
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Miercoles###### 
+Libre
+Libre
+GE 3A
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Jueves ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Viernes ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Horario del profesor Mari
+###### Lunes ###### 
+Libre
+Libre
+LE 3A
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Martes ###### 
+Libre
+LE 3A
+Libre
+Libre
+Libre
+TU 3A
+Libre
+Libre
+###### Miercoles###### 
+Libre
+Libre
+LI 1B
+Libre
+LE 3A
+Libre
+Libre
+Libre
+###### Jueves ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+LE 3A
+###### Viernes ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Horario del profesor Pila
+###### Lunes ###### 
+Libre
+AC 4B
+AC 4D
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Martes ###### 
+Libre
+Libre
+Libre
+Libre
+AC 4B
+AC 4D
+Libre
+MA 4C
+###### Miercoles###### 
+Libre
+Libre
+AC 4D
+Libre
+AC 4B
+Libre
+MA 4C
+Libre
+###### Jueves ###### 
+MA 4C
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+AC 4B
+###### Viernes ###### 
+Libre
+Libre
+AC 4B
+MA 4C
+Libre
+Libre
+Libre
+Libre
+Horario del profesor ING3
+###### Lunes ###### 
+Libre
+RF 1B
+Libre
+LE 1B
+Libre
+Libre
+IN 1B
+Libre
+###### Martes ###### 
+Libre
+Libre
+Libre
+RF 1B
+Libre
+LE 1B
+IN 1B
+Libre
+###### Miercoles###### 
+IN 1B
+LE 1B
+Libre
+RF 1A
+Libre
+Libre
+Libre
+Libre
+###### Jueves ###### 
+Libre
+Libre
+IN 1B
+Libre
+LE 1B
+RF 1A
+Libre
+Libre
+###### Viernes ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Horario del profesor MaJo
+###### Lunes ###### 
+MA 1B
+MA 1A
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Martes ###### 
+Libre
+Libre
+Libre
+Libre
+MA 1B
+Libre
+MA 1A
+Libre
+###### Miercoles###### 
+Libre
+Libre
+MA 1A
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Jueves ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+MA 1B
+MA 1A
+###### Viernes ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+MA 1B
+Horario del profesor Javi
+###### Lunes ###### 
+Libre
+Libre
+TE 4B
+Libre
+Libre
+TE 4D
+Libre
+Libre
+###### Martes ###### 
+Libre
+Libre
+TE 3A
+Libre
+TE 4B
+Libre
+TE 4D
+Libre
+###### Miercoles###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+TE 3A
+Libre
+###### Jueves ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Viernes ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Horario del profesor Jose
+###### Lunes ###### 
+EF 4A
+EF 3C
+Libre
+EF 3B
+EF 1A
+Libre
+Libre
+Libre
+###### Martes ###### 
+Libre
+Libre
+EF 1B
+EF 4D
+EF 4A
+EF 3D
+Libre
+EF 4B
+###### Miercoles###### 
+EF 3B
+Libre
+EF 2B
+EF 4B
+Libre
+EF 1B
+Libre
+Libre
+###### Jueves ###### 
+EF 2A
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Viernes ###### 
+EF 2A
+EF 2B
+Libre
+EF 3A
+Libre
+EF 3D
+Libre
+Libre
+Horario del profesor Ric
+###### Lunes ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+LE 2B
+Libre
+###### Martes ###### 
+Libre
+Libre
+Libre
+LE 2B
+Libre
+Libre
+Libre
+LE 2A
+###### Miercoles###### 
+Libre
+Libre
+Libre
+Libre
+LE 2B
+Libre
+Libre
+LE 2A
+###### Jueves ###### 
+Libre
+Libre
+Libre
+LE 2B
+Libre
+Libre
+Libre
+LE 2A
+###### Viernes ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+LE 2A
+Horario del profesor Almu
+###### Lunes ###### 
+Libre
+AS 3D
+MU 1B
+Libre
+MU 2B
+Libre
+Libre
+Libre
+###### Martes ###### 
+Libre
+Libre
+AS 3B
+Libre
+MU 2A
+Libre
+MU 2B
+AS 3D
+###### Miercoles###### 
+AS 3D
+Libre
+MU 1B
+MU 1A
+Libre
+Libre
+Libre
+MU 2A
+###### Jueves ###### 
+Libre
+Libre
+AS 3B
+Libre
+Libre
+LI 1A
+Libre
+MU 1A
+###### Viernes ###### 
+Libre
+Libre
+AS 3B
+Libre
+AS 3D
+Libre
+Libre
+Libre
+Horario del profesor Vice
+###### Lunes ###### 
+AS 4B
+Libre
+Libre
+AS 4D
+Libre
+LE 4C
+Libre
+Libre
+###### Martes ###### 
+Libre
+Libre
+Libre
+LE 4C
+Libre
+AS 4B
+Libre
+AS 4D
+###### Miercoles###### 
+Libre
+Libre
+Libre
+Libre
+AS 4D
+Libre
+AS 4B
+LE 4C
+###### Jueves ###### 
+Libre
+AS 4B
+Libre
+AS 4D
+Libre
+Libre
+Libre
+Libre
+###### Viernes ###### 
+AS 4B
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+AS 4D
+Horario del profesor Mano
+###### Lunes ###### 
+Libre
+Libre
+Libre
+T 3C
+Libre
+Libre
+Libre
+Libre
+###### Martes ###### 
+EP 4B
+Libre
+Libre
+Libre
+Libre
+EP 4D
+EP 4A
+T 3C
+###### Miercoles###### 
+EP 4D
+Libre
+EP 4A
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Jueves ###### 
+Libre
+Libre
+EP 4D
+EP 1A
+Libre
+Libre
+EP 4A
+Libre
+###### Viernes ###### 
+EP 1B
+Libre
+Libre
+EP 4A
+Libre
+Libre
+T 3A
+EP 4C
+Horario del profesor Seba
+###### Lunes ###### 
+Libre
+Libre
+Libre
+MA 3A
+Libre
+Libre
+Libre
+Libre
+###### Martes ###### 
+MA 3A
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+###### Miercoles###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+MA 3A
+Libre
+Libre
+###### Jueves ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+MA 3A
+Libre
+###### Viernes ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Horario del profesor Elvi
+###### Lunes ###### 
+AC 3B
+Libre
+Libre
+Libre
+Libre
+Libre
+AC 3D
+Libre
+###### Martes ###### 
+Libre
+AC 3D
+Libre
+MA 2A
+Libre
+Libre
+AC 3B
+Libre
+###### Miercoles###### 
+Libre
+Libre
+AC 3B
+Libre
+Libre
+Libre
+MA 2A
+Libre
+###### Jueves ###### 
+AC 3B
+Libre
+MA 2B
+Libre
+AC 3D
+Libre
+Libre
+Libre
+###### Viernes ###### 
+AC 3D
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+AC 3B

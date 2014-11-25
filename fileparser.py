@@ -2,17 +2,17 @@
 from collections import defaultdict
 
 # # parse file to get initial data
+
 class subject():
     def __init__(self, name, group):
         self.name = name
         self.group = group
 
-
-def read_assignments():
+def read_assignments(FILENAME):
     """ Returns profs_asg which corresponds to a defaultdict whose keys
     represents professor names and its values are related to the subjects that they have"""
     profs_asg = defaultdict(set)
-    with open('assignments2.txt') as p:
+    with open(FILENAME) as p:
         for line in p.readlines():
             if line[0] == ':':
                 professor = line[1:-1]
