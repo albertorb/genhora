@@ -31,15 +31,15 @@ import threading
 # from mpi4py import MPI
 
 # Inicializacion del programa
-NUM_GENERATIONS = 300
-TAM_POPULATION = 1000
-PROB_MUTATION = 60
+NUM_GENERATIONS = 500
+TAM_POPULATION = 100
+PROB_MUTATION = 10
 # # atributos metodo selection
 PERC_POP = 100
 PERC_RANDOM = 30
 # # end atributos metodo selection
 # # atributos metodo crossover
-PERC_POP_CROS = 50
+PERC_POP_CROS = 80
 # # end atributos metodo crossover
 PARSE_ASSIGNMENTS = defaultdict(set)
 SUBJECTS = [0]  # Inicializamos con 0 que representa hora libre
@@ -50,7 +50,7 @@ SUBJECTS_NUMBER = 0
 PROFESSOR_NUMBER = 0
 
 
-######### FILE PARSER ##########
+# ######## FILE PARSER ##########
 
 # # parse file to get initial data
 
@@ -600,6 +600,9 @@ def prueba(FILENAME):
     count = NUM_GENERATIONS
     res = initPopulation(asgmnts)
 
+    fitness_counter = 0
+    old_fitness = 0
+    global PROB_MUTATION
     mejoresInd = []
     res = sorted(res, key=cmp_elite)
 
@@ -616,11 +619,20 @@ def prueba(FILENAME):
                         :95]  # Nosquedamos con los 5 mejores de la anterior y el resto de la nueva encontrada, así siempre mantenmos las 5 mejores soluciones encontradas
         print('Proceso de seleccion de la generacion ' + str(count) + ' finalizado')
         res = sorted(res, key=cmp_elite)
-        print('El mejor individuo encontrado en generacion ' + str(count) + ' con fitness ' + str(fitness(
-            res[0])))  # + ' tiene la siguiente forma')
+        fitn = fitness(res[0])
+        print('El mejor individuo encontrado en generacion ' + str(count) + ' con fitness ' + str(
+            fitn))  # + ' tiene la siguiente forma')
         mejoresInd.append(res[0])
         # print(phenotype(res[0]))
         # print(" El fitness del mejor individuo es " + str(fitness(res[0])))
+        if count == NUM_GENERATIONS:
+            old_fitness = fitn
+        if fitn >= old_fitness:
+            fitness_counter += 1
+        if fitness_counter > 4:
+            PROB_MUTATION += 10
+            fitness_counter = 0
+
         count -= 1
 
     mejoresInd = sorted(mejoresInd, key=cmp_elite)
