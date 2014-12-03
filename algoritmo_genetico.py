@@ -31,8 +31,8 @@ import threading
 # from mpi4py import MPI
 
 # Inicializacion del programa
-NUM_GENERATIONS = 500
-TAM_POPULATION = 100
+NUM_GENERATIONS = 200
+TAM_POPULATION = 2000
 PROB_MUTATION = 10
 # # atributos metodo selection
 PERC_POP = 100
@@ -186,35 +186,35 @@ def initIndividual(ASSIGNMENTS):
             if aux.__len__() > 0:
                 if aux[0] not in monday:
                     monday.append(aux.pop(0))
-        monday += (8 - monday.__len__()) * zeros
+        monday += (6 - monday.__len__()) * zeros
         random.shuffle(monday)
 
         for n in range(4):
             if aux.__len__() > 0:
                 if aux[0] not in tuesday:
                     tuesday.append(aux.pop(0))
-        tuesday += (8 - tuesday.__len__()) * zeros
+        tuesday += (6 - tuesday.__len__()) * zeros
         random.shuffle(tuesday)
 
         for n in range(4):
             if aux.__len__() > 0:
                 if aux[0] not in wednesday:
                     wednesday.append(aux.pop(0))
-        wednesday += (8 - wednesday.__len__()) * zeros
+        wednesday += (6 - wednesday.__len__()) * zeros
         random.shuffle(wednesday)
 
         for n in range(4):
             if aux.__len__() > 0:
                 if aux[0] not in thursday:
                     thursday.append(aux.pop(0))
-        thursday += (8 - thursday.__len__()) * zeros
+        thursday += (6 - thursday.__len__()) * zeros
         random.shuffle(thursday)
 
         for n in range(4):
             if aux.__len__() > 0:
                 if aux[0] not in friday:
                     friday.append(aux.pop(0))
-        friday += (8 - friday.__len__()) * zeros
+        friday += (6 - friday.__len__()) * zeros
         random.shuffle(friday)
 
         ind += monday + tuesday + wednesday + thursday + friday
@@ -227,16 +227,16 @@ def phenotype(genotype):
     BY_DAY_PROFESSOR = list()
     PROFESSOR_WEEK = dict()
     for num in range(PROFESSOR_NUMBER):
-        fin = (num + 1) * 40  # TODO aqui se ha tomado 8 como numero de asignaturas
-        ini = num * 40
+        fin = (num + 1) * 30  # TODO aqui se ha tomado 8 como numero de asignaturas
+        ini = num * 30
         BY_PROFESSOR.append(genotype[ini:fin])
     count = 0
     for prof in BY_PROFESSOR:
-        BY_DAY_PROFESSOR.append(prof[:8])
-        BY_DAY_PROFESSOR.append(prof[8:16])
-        BY_DAY_PROFESSOR.append(prof[16:24])
-        BY_DAY_PROFESSOR.append(prof[24:32])
-        BY_DAY_PROFESSOR.append(prof[32:40])
+        BY_DAY_PROFESSOR.append(prof[:6])
+        BY_DAY_PROFESSOR.append(prof[6:12])
+        BY_DAY_PROFESSOR.append(prof[12:18])
+        BY_DAY_PROFESSOR.append(prof[18:24])
+        BY_DAY_PROFESSOR.append(prof[24:30])
         PROFESSOR_WEEK.update({count: BY_DAY_PROFESSOR})
         BY_DAY_PROFESSOR = list()
         count = count + 1
@@ -255,12 +255,12 @@ def mutation_day(chromosome):
         checkprob = random.randint(0, 100)
         if checkprob <= PROB_MUTATION:
             days_to_change = random.sample(range(5), 2)
-            first_day_start = 40 * days_to_change[0]
-            first_day_end = first_day_start + 40
+            first_day_start = 30 * days_to_change[0]
+            first_day_end = first_day_start + 30
             first_day = list(chromosome[first_day_start:first_day_end])
 
-            second_day_start = 40 * days_to_change[1]
-            second_day_end = second_day_start + 40
+            second_day_start = 30 * days_to_change[1]
+            second_day_end = second_day_start + 30
             second_day = list(chromosome[second_day_start:second_day_end])
 
             chromosome[first_day_start:first_day_end] = second_day
@@ -271,85 +271,90 @@ def mutation_hour(chromosome):
     ini = 0
     fin = 0
     for prof in range(PROFESSOR_NUMBER):
-        for i in range(0 + ini, 8 + fin - 1):
+        for i in range(0 + ini, 6 + fin - 1):
 
             checkprob = random.randint(0, 100)
             if checkprob <= PROB_MUTATION:
-                rand1 = random.randint(0 + ini, 8 + fin - 1)
-                rand2 = random.randint(0 + ini, 8 + fin - 1)
+                rand1 = random.randint(0 + ini, 6 + fin - 1)
+                rand2 = random.randint(0 + ini, 6 + fin - 1)
                 # UTILIZO randint porque sample no me deja especificar el rango concreto de numeros, es decir, de 5 a 10 por ejemplo, sino que es un rango tal que range(200)
                 while rand1 == rand2:
-                    rand2 = random.randint(0 + ini, 8 + fin - 1)
+                    rand2 = random.randint(0 + ini, 6 + fin - 1)
                 h1 = chromosome[rand1]
                 h2 = chromosome[rand2]
                 chromosome[rand2] = h1
                 chromosome[rand1] = h2
                 # Se intercambian horas del mismo dia
 
-        for i in range(8 + ini, 16 + fin - 1):
+        for i in range(6 + ini, 12 + fin - 1):
 
             checkprob = random.randint(0, 100)
             if checkprob <= PROB_MUTATION:
-                rand1 = random.randint(8 + ini, 16 + fin - 1)
-                rand2 = random.randint(8 + ini, 16 + fin - 1)
+                rand1 = random.randint(6 + ini, 12 + fin - 1)
+                rand2 = random.randint(6 + ini, 12 + fin - 1)
                 # UTILIZO randint porque sample no me deja especificar el rango concreto de numeros, es decir, de 5 a 10 por ejemplo, sino que es un rango tal que range(200)
                 while rand1 == rand2:
-                    rand2 = random.randint(8 + ini, 16 + fin - 1)
+                    rand2 = random.randint(6 + ini, 12 + fin - 1)
                 h1 = chromosome[rand1]
                 h2 = chromosome[rand2]
                 chromosome[rand2] = h1
                 chromosome[rand1] = h2
 
-        for i in range(16 + ini, 24 + fin - 1):
+        for i in range(12 + ini, 18 + fin - 1):
 
             checkprob = random.randint(0, 100)
             if checkprob <= PROB_MUTATION:
-                rand1 = random.randint(16 + ini, 24 + fin - 1)
-                rand2 = random.randint(16 + ini, 24 + fin - 1)
+                rand1 = random.randint(12 + ini, 18 + fin - 1)
+                rand2 = random.randint(12 + ini, 18 + fin - 1)
                 # UTILIZO randint porque sample no me deja especificar el rango concreto de numeros, es decir, de 5 a 10 por ejemplo, sino que es un rango tal que range(200)
                 while rand1 == rand2:
-                    rand2 = random.randint(16 + ini, 24 + fin - 1)
+                    rand2 = random.randint(12 + ini, 18 + fin - 1)
                 h1 = chromosome[rand1]
                 h2 = chromosome[rand2]
                 chromosome[rand2] = h1
                 chromosome[rand1] = h2
 
-        for i in range(24 + ini, 32 + fin - 1):
+        for i in range(18 + ini, 24 + fin - 1):
 
             checkprob = random.randint(0, 100)
             if checkprob <= PROB_MUTATION:
-                rand1 = random.randint(24 + ini, 32 + fin - 1)
-                rand2 = random.randint(24 + ini, 32 + fin - 1)
+                rand1 = random.randint(18 + ini, 24 + fin - 1)
+                rand2 = random.randint(18 + ini, 24 + fin - 1)
                 # UTILIZO randint porque sample no me deja especificar el rango concreto de numeros, es decir, de 5 a 10 por ejemplo, sino que es un rango tal que range(200)
                 while rand1 == rand2:
-                    rand2 = random.randint(24 + ini, 32 + fin - 1)
+                    rand2 = random.randint(18 + ini, 24 + fin - 1)
                 h1 = chromosome[rand1]
                 h2 = chromosome[rand2]
                 chromosome[rand2] = h1
                 chromosome[rand1] = h2
 
-        for i in range(32 + ini, 40 + fin - 1):
+        for i in range(24 + ini, 30 + fin - 1):
 
             checkprob = random.randint(0, 100)
             if checkprob <= PROB_MUTATION:
-                rand1 = random.randint(32 + ini, 40 + fin - 1)
-                rand2 = random.randint(32 + ini, 40 + fin - 1)
+                rand1 = random.randint(24 + ini, 30 + fin - 1)
+                rand2 = random.randint(24 + ini, 30 + fin - 1)
                 # UTILIZO randint porque sample no me deja especificar el rango concreto de numeros, es decir, de 5 a 10 por ejemplo, sino que es un rango tal que range(200)
                 while rand1 == rand2:
-                    rand2 = random.randint(32 + ini, 40 + fin - 1)
+                    rand2 = random.randint(24 + ini, 30 + fin - 1)
                 h1 = chromosome[rand1]
                 h2 = chromosome[rand2]
                 chromosome[rand2] = h1
                 chromosome[rand1] = h2
 
-        ini += 40
-        fin += 40
+        ini += 30
+        fin += 30
 
 
 def mutation(chromosome):
-    mutation_hour(chromosome)
-    mutation_day(chromosome)
-    return chromosome
+    copy = list(chromosome)
+    #fitness_old = fitness(copy)
+    mutation_hour(copy)
+    mutation_day(copy)
+    #fitness_new = fitness(copy)
+    #if fitness_old < fitness_new:
+    #    copy = chromosome
+    return copy
 
 
 def do_mutation(population):
@@ -370,8 +375,8 @@ def crosover(ind1, ind2):
         while j < 5:  # por cada dia de la semana
             j += 1
             i += 1
-            ch1 = ind1[(i * 8 + ini):(j * 8 + fin)]
-            ch2 = ind2[(i * 8 + ini):(j * 8 + fin)]
+            ch1 = ind1[(i * 6 + ini):(j * 6 + fin)]
+            ch2 = ind2[(i * 6 + ini):(j * 6 + fin)]
             r1 = random.sample(rand_num, 2)
             r1.sort()
 
@@ -386,14 +391,14 @@ def crosover(ind1, ind2):
             # FORMANDO CHILD 1
             c1_x = list(c1_1)  # lista auxiliar para nuevo hijo
             for elem in ch2:  # vamos metiendo en orden elementos del padre2 en el hijo1 comprobando que no se esten repetidos
-                if c1_x.__len__() > 7:
+                if c1_x.__len__() > 5:
                     break
                 elif elem not in c1_1:
                     c1_x.append(elem)
 
-            if c1_x.__len__() < 8:  # caso hipotetico en el que no haya suficientes elementos no repetidos en el padre2 para satisfacer el hijo1
+            if c1_x.__len__() < 6:  # caso hipotetico en el que no haya suficientes elementos no repetidos en el padre2 para satisfacer el hijo1
                 for elem in ch1:
-                    if c1_x.__len__() > 7:
+                    if c1_x.__len__() > 5:
                         break
                     elif elem not in c1_x or elem == 0:
                         c1_x.append(elem)
@@ -418,14 +423,14 @@ def crosover(ind1, ind2):
 
             c2_x = list(c2_i + c2_d)
             for elem in ch1:
-                if c2_x.__len__() > 7:
+                if c2_x.__len__() > 5:
                     break
                 elif elem not in c2_x:
                     c2_x.append(elem)
 
-            if c2_x.__len__() < 8:  # caso hipotetico en el que no haya suficientes elementos no repetidos en el padre1 para satisfacer el hijo2
+            if c2_x.__len__() < 6:  # caso hipotetico en el que no haya suficientes elementos no repetidos en el padre1 para satisfacer el hijo2
                 for elem in ch2:
-                    if c2_x.__len__() > 7:
+                    if c2_x.__len__() > 5:
                         break
                     elif elem not in c2_x or elem == 0:
                         c2_x.append(elem)
@@ -442,9 +447,9 @@ def crosover(ind1, ind2):
             child2.extend(c2_x)
             # FIN CHILD 2
 
-            rand_num = range(8 * i, 8 * j)
-        ini += 40
-        fin += 40
+            rand_num = range(6 * i, 6 * j)
+        ini += 30
+        fin += 30
         for elem in child1:
             if elem == 0:
                 pass
@@ -459,6 +464,17 @@ def crosover(ind1, ind2):
                 while child2.count(elem) > SUBJECTS_REPETITIONS[elem]:
                     child2[child2.index(elem)] = 0
                     # TODO comentar en memoria que la anterior comprobacion es computacionalmente inviable!!!!!!
+
+    fitness_old1 = fitness(ind1)
+    fitness_old2 = fitness(ind2)
+    fitness_new1 = fitness(child1)
+    fitness_new2 = fitness(child2)
+    if fitness_old1 < fitness_new1:
+        child1 = ind1
+    if fitness_old2 < fitness_new2:
+        child2 = ind2
+    
+
 
     return child1, child2
 
@@ -495,7 +511,7 @@ def do_crossover(population):
 def checkGroups(individuo):
     res = 0
     for day in range(5):  # 5 dias de la semana
-        for hour in range(8):  # 0 al 7, no del 1 al 8
+        for hour in range(6):  # 0 al 7, no del 1 al 8
             auxlist = []
             profcounter = 0
             counter = 0
@@ -506,7 +522,7 @@ def checkGroups(individuo):
                 else:
                     group = subject[-2::]
                     auxlist.append(group)  # funciona con grupos de 2 digitos tipo 2A 3B 4D
-                profcounter += 40
+                profcounter += 30
                 counter += 1
             for elem in auxlist:
                 if auxlist.count(elem) > 1:
@@ -526,31 +542,33 @@ def fitness(ind):
     for i in range(PROFESSOR_NUMBER):
 
         init_day = 0
-        fin_day = 7
+        fin_day = 5
         timetable = ind[init:fin]
 
         for j in range(5):  # 5 dias a la semana
             t = timetable[init_day:fin_day]
-            count = 8 - t.count(0)
+            count = 6 - t.count(0)
             if count > MAXIMUM_HOURS_BY_LAW:
                 res += 999
                 break  # muy ilegal
             else:
                 res -= 66  # quita un maximo de 5*66 = 330
+            
+            if res < 0:
+                res = 0
 
-            init_day += 8
-            fin_day += 8
-
-        if res < 0:
-            res = 0
-        init += 40
-        fin += 40
+            init_day += 6
+            fin_day += 6
+        init += 30
+        fin += 30
     check = checkGroups(ind)
     if check > 0:
         res += 10 * check
     else:
-        res -= 1000
+        res -= 100
     # clock = random.sample(0,PROFESSOR_NUMBER)
+    if res < 0:
+            res = 0
     return res
 
 
@@ -605,22 +623,22 @@ def prueba(FILENAME):
     global PROB_MUTATION
     mejoresInd = []
     res = sorted(res, key=cmp_elite)
-
+    f1 = open('media_fitness_por_generacion.txt', 'w')
     while (count > 0):
-        print('Aplicando crosover en generacion ' + str(count))
+        print('Generacion ' + str(count))
+        print('Aplicando crosover')
         res_n = do_crossover(res)
-        print('Mutando generacion ' + str(count))
+        print('Mutando con probabilidad ' + str(PROB_MUTATION))
         do_mutation(res_n)
         # print('Seleccionando individuos de la generacion ' + str(count))
         # selected = selection(res_n)
 
         res_n = sorted(res_n, key=cmp_elite)
-        res = res[:5] + res_n[
-                        :95]  # Nosquedamos con los 5 mejores de la anterior y el resto de la nueva encontrada, así siempre mantenmos las 5 mejores soluciones encontradas
-        print('Proceso de seleccion de la generacion ' + str(count) + ' finalizado')
+        res = res[:5] + res_n[:-5]  # Nosquedamos con los 5 mejores de la anterior y el resto de la nueva encontrada, así siempre mantenmos las 5 mejores soluciones encontradas
+        print('Proceso de seleccion finalizado')
         res = sorted(res, key=cmp_elite)
         fitn = fitness(res[0])
-        print('El mejor individuo encontrado en generacion ' + str(count) + ' con fitness ' + str(
+        print('Fitness del mejor individuo de la generacion: ' + str(
             fitn))  # + ' tiene la siguiente forma')
         mejoresInd.append(res[0])
         # print(phenotype(res[0]))
@@ -629,14 +647,27 @@ def prueba(FILENAME):
             old_fitness = fitn
         if fitn >= old_fitness:
             fitness_counter += 1
-        if fitness_counter > 4:
+        if fitness_counter > 4 and PROB_MUTATION < 100:
             PROB_MUTATION += 10
             fitness_counter = 0
+        aux = 0
+        for elem in res:
+            aux += fitness(elem)
+        aux = aux/res.__len__()
+        print('Se pisan ' + str(checkGroups(res[0])) + ' horarios en el mejor individuo')
+        print('El fitness medio es ' + str(aux) + ' \n')
+        f1.write(str(aux) + '\n')
+        if fitn == 0:
+            count = 0
+        old_fitness = fitn
 
         count -= 1
 
     mejoresInd = sorted(mejoresInd, key=cmp_elite)
     print(" El fitness del mejor individuo es " + str(fitness(mejoresInd[0])))
+    f1.write('Mejor individuo: ' + str(fitness(mejoresInd[0])))
+    f1.close()
+    write_sort_res(mejoresInd[0])
     f = open('scheduleByTeacher.txt', 'w')
     print(mejoresInd[0])
     pheno = phenotype(mejoresInd[0])
@@ -645,13 +676,13 @@ def prueba(FILENAME):
         for num in range(subj.__len__()):
             if num == 0:
                 f.write('###### Lunes ###### \n')
-            if num == 8:
+            if num == 6:
                 f.write('###### Martes ###### \n')
-            if num == 16:
+            if num == 12:
                 f.write('###### Miercoles###### \n')
-            if num == 24:
+            if num == 18:
                 f.write('###### Jueves ###### \n')
-            if num == 32:
+            if num == 24:
                 f.write('###### Viernes ###### \n')
             f.write(str(subj[num]) + '\n')
 
@@ -664,6 +695,34 @@ def prueba(FILENAME):
         print('No se pisan horarios entre grupos')
     else:
         print('Se pisan ' + str(incompatibilidades) + ' horarios entre grupos!!!')
+
+def write_sort_res(something):
+    monday = something[0::5]
+    tuesday = something[1::5]
+    wednesday = something[2::5]
+    thursday = something[3::5]
+    friday = something[4::5]
+    f = open('sorted_by_day.txt', 'w')
+    f.write(' ## MONDAY ## \n')
+    for elem in monday:
+        f.write(str(elem) + ' \n')
+    f.write(' ## TUESDAY ## \n')
+    for elem in tuesday:
+        f.write(str(elem) + ' \n')
+    f.write(' ## WEDNESDAY ## \n')
+    for elem in wednesday:
+        f.write(str(elem) + ' \n')
+    f.write(' ## THURSDAY ## \n')
+    for elem in thursday:
+        f.write(str(elem) + ' \n')
+    f.write(' ## FRIDAY ## \n')
+    for elem in friday:
+        f.write(str(elem) + ' \n')
+    f.close()
+
+
+
+
 
 
 # prueba('assignments.txt')

@@ -1,131 +1,167 @@
 Horario del profesor Jose
 ###### Lunes ###### 
+EF 4B
 Libre
-Libre
-Libre
-EF 3A
-Libre
-Libre
-###### Martes ###### 
-EF 3D
-EF 3A
-EF 3B
-Libre
-EF 4A
-Libre
-###### Miercoles###### 
-EF 1A
 Libre
 Libre
 Libre
 EF 4C
 Libre
-###### Jueves ###### 
-EF 3D
 EF 1A
-EF 3C
-Libre
-EF 4A
-Libre
-###### Viernes ###### 
-EF 4B
-EF 3C
-EF 1B
-EF 3B
-Libre
-Libre
-Horario del profesor Simon
-###### Lunes ###### 
-FR 3C
-Libre
-FR 4A
-Libre
-Libre
-Libre
 ###### Martes ###### 
 Libre
-FR 3A
-FR 4A
 Libre
+EF 3B
+EF 4C
+EF 2A
+EF 3D
 Libre
 Libre
 ###### Miercoles###### 
 Libre
-Ed 3B
-FR 3C
-FR 3A
-FR 4C
+EF 4D
+Libre
+Libre
+Libre
+EF 3C
+Libre
 Libre
 ###### Jueves ###### 
-FR 4C
-TU 3B
-Ed 3A
 Libre
-FR 2B
 Libre
+EF 3B
+EF 3A
+Libre
+Libre
+EF 4D
+EF 4B
 ###### Viernes ###### 
 Libre
 Libre
+Libre
+Libre
+EF 1B
+Libre
+Libre
+EF 4A
+Horario del profesor Simon
+###### Lunes ###### 
+Libre
+Libre
+FR 4C
 FR 2A
 Libre
+Libre
+Ed 3A
+FR 4A
+###### Martes ###### 
+Libre
+Libre
+FR 4A
+Ed 3B
+FR 2B
+Libre
+FR 3C
+Libre
+###### Miercoles###### 
+Libre
+TU 3B
+Libre
+Libre
+FR 2A
+FR 4C
+Libre
+Libre
+###### Jueves ###### 
+Libre
+Libre
+FR 3C
+Libre
+Libre
+Libre
+FR 3A
+FR 2B
+###### Viernes ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+FR 3A
 Libre
 Libre
 Horario del profesor Vice
 ###### Lunes ###### 
 AS 4D
+Libre
+Libre
+Libre
+Libre
 AS 4B
-Libre
-Libre
 Libre
 Libre
 ###### Martes ###### 
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
 AS 4D
-AS 4B
-Libre
-Libre
-LE 4C
 Libre
 ###### Miercoles###### 
 Libre
 Libre
 Libre
-Libre
 AS 4B
+Libre
+Libre
+AS 4D
 Libre
 ###### Jueves ###### 
+Libre
+AS 4D
+Libre
 AS 4B
 Libre
 Libre
 Libre
-LE 4C
-AS 4D
+Libre
 ###### Viernes ###### 
 Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
 AS 4B
-Libre
-Libre
-AS 4D
-Libre
 Horario del profesor Javi
 ###### Lunes ###### 
 Libre
+Libre
 TE 4D
 Libre
+Libre
 TE 4B
-TE 3A
+Libre
 Libre
 ###### Martes ###### 
-TE 3A
 Libre
-Libre
-TE 4D
 TE 4B
+TE 4D
 Libre
+Libre
+Libre
+Libre
+TE 3A
 ###### Miercoles###### 
 Libre
 Libre
 Libre
 Libre
+Libre
+TE 3A
 Libre
 Libre
 ###### Jueves ###### 
@@ -135,7 +171,11 @@ Libre
 Libre
 Libre
 Libre
+Libre
+Libre
 ###### Viernes ###### 
+Libre
+Libre
 Libre
 Libre
 Libre
@@ -149,143 +189,183 @@ Libre
 Libre
 Libre
 Libre
-CS 1B
+CS 1A
+ET 4C
+Libre
 ###### Martes ###### 
 Libre
-TU 4D
 Libre
+CS 1A
 CS 1B
-ET 4C
-CS 2A
-###### Miercoles###### 
 Libre
-Libre
-Libre
-CS 1A
-Libre
-Libre
-###### Jueves ###### 
-CS 1A
-Libre
-Libre
-Libre
-Libre
-Libre
-###### Viernes ###### 
 Libre
 Libre
 CS 2B
-CS 2A
-ET 4C
+###### Miercoles###### 
 CS 1A
+TU 4C
+Libre
+Libre
+CS 1B
+Libre
+Libre
+CS 2B
+###### Jueves ###### 
+Libre
+Libre
+Libre
+Libre
+CS 2A
+Libre
+TU 4D
+CS 2B
+###### Viernes ###### 
+ET 4C
+CS 1B
+Libre
+CS 2A
+Libre
+Libre
+Libre
+Libre
 Horario del profesor Pepe
 ###### Lunes ###### 
-IN 4B
+IN 2A
 Libre
 Libre
 Libre
 Libre
-Libre
-###### Martes ###### 
 IN 2B
 IN 4B
+Libre
+###### Martes ###### 
 IN 2A
+IN 2B
+Libre
+Libre
+IN 4B
 Libre
 Libre
 Libre
 ###### Miercoles###### 
-Libre
 IN 2A
+IN 4B
 Libre
 Libre
+Libre
+IN 2B
 Libre
 Libre
 ###### Jueves ###### 
-IN 2B
-IN 2A
 Libre
 Libre
 Libre
-IN 4B
+Libre
+Libre
+Libre
+Libre
+Libre
 ###### Viernes ###### 
 Libre
 Libre
-IN 2B
+Libre
+Libre
+Libre
 Libre
 Libre
 Libre
 Horario del profesor Rosa
 ###### Lunes ###### 
 Libre
+AM 3D
+Libre
+Libre
+AM 3B
+Libre
 TE 2A
+TE 3C
+###### Martes ###### 
+Libre
 AM 3D
 Libre
 Libre
 Libre
-###### Martes ###### 
-Libre
-Libre
-TE 2A
-Libre
+TE 3C
 Libre
 Libre
 ###### Miercoles###### 
 Libre
 TE 2A
 Libre
-AM 3B
+Libre
 Libre
 TE 3C
+Libre
+Libre
 ###### Jueves ###### 
+Libre
+Libre
+AM 3D
+TE 2A
 AM 3B
-Libre
-Libre
 Libre
 Libre
 Libre
 ###### Viernes ###### 
-AM 3D
-Libre
 Libre
 AM 3B
 Libre
-TE 3C
+Libre
+Libre
+Libre
+Libre
+Libre
 Horario del profesor Osca
 ###### Lunes ###### 
-IN 4C
-IN 3A
+IN 1A
+IN 3B
 Libre
 IN 3C
 Libre
 Libre
-###### Martes ###### 
-IN 3B
 Libre
-IN 4C
 IN 4D
+###### Martes ###### 
+IN 4C
+IN 3A
+IN 1A
+Libre
+Libre
+Libre
 Libre
 Libre
 ###### Miercoles###### 
-Libre
-Libre
-IN 1A
-Libre
-Libre
-IN 3B
-###### Jueves ###### 
-Libre
-IN 3D
-IN 1A
-Libre
-IN 3A
-IN 4C
-###### Viernes ###### 
-IN 3C
-IN 3D
 IN 4D
 Libre
 Libre
+IN 3A
 IN 1A
+Libre
+Libre
+Libre
+###### Jueves ###### 
+Libre
+Libre
+IN 4C
+IN 1A
+IN 3D
+Libre
+Libre
+Libre
+###### Viernes ###### 
+IN 3D
+Libre
+Libre
+IN 4C
+Libre
+IN 3A
+Libre
+IN 3C
 Horario del profesor Mari
 ###### Lunes ###### 
 Libre
@@ -294,28 +374,38 @@ Libre
 Libre
 Libre
 LE 3A
+Libre
+Libre
 ###### Martes ###### 
 Libre
-Libre
-Libre
 LE 3A
+Libre
+Libre
+Libre
+Libre
 Libre
 Libre
 ###### Miercoles###### 
-LE 3A
 Libre
-LI 1B
-Libre
-Libre
-Libre
-###### Jueves ###### 
 LE 3A
 TU 3A
 Libre
 Libre
 Libre
 Libre
+Libre
+###### Jueves ###### 
+Libre
+Libre
+LE 3A
+Libre
+Libre
+Libre
+Libre
+LI 1B
 ###### Viernes ###### 
+Libre
+Libre
 Libre
 Libre
 Libre
@@ -325,78 +415,100 @@ Libre
 Horario del profesor Pila
 ###### Lunes ###### 
 Libre
+Libre
+Libre
 MA 4C
+AC 4D
 Libre
 Libre
-AC 4B
 Libre
 ###### Martes ###### 
 Libre
+AC 4B
 Libre
 Libre
+Libre
+Libre
+MA 4C
 AC 4D
-AC 4B
-Libre
 ###### Miercoles###### 
-Libre
-Libre
 AC 4B
+Libre
+Libre
+Libre
+Libre
 Libre
 Libre
 Libre
 ###### Jueves ###### 
+MA 4C
+Libre
 Libre
 AC 4B
 Libre
-MA 4C
+Libre
 AC 4D
 Libre
 ###### Viernes ###### 
+Libre
+Libre
+Libre
 MA 4C
-Libre
-Libre
-AC 4D
 AC 4B
+AC 4D
+Libre
 Libre
 Horario del profesor Almu
 ###### Lunes ###### 
-MU 2A
-MU 1A
 Libre
-MU 2B
-LI 1A
 Libre
-###### Martes ###### 
 AS 3B
 Libre
-AS 3D
+Libre
+Libre
+Libre
+Libre
+###### Martes ###### 
+Libre
+Libre
+Libre
+AS 3B
+Libre
 Libre
 Libre
 Libre
 ###### Miercoles###### 
-MU 1B
-MU 1A
-Libre
-Libre
-Libre
+MU 2A
 AS 3B
+AS 3D
+Libre
+Libre
+Libre
+Libre
+Libre
 ###### Jueves ###### 
 Libre
-MU 2B
+Libre
+AS 3D
 Libre
 AS 3B
+Libre
 Libre
 Libre
 ###### Viernes ###### 
 Libre
-AS 3B
 MU 2A
 Libre
+Libre
 AS 3D
+Libre
+Libre
 Libre
 Horario del profesor ING3
 ###### Lunes ###### 
 Libre
+RF 1A
+IN 1B
 Libre
 LE 1B
 Libre
@@ -405,66 +517,84 @@ Libre
 ###### Martes ###### 
 Libre
 Libre
-LE 1B
 Libre
 Libre
 Libre
+Libre
+IN 1B
+RF 1A
 ###### Miercoles###### 
-IN 1B
-RF 1A
-LE 1B
 Libre
 Libre
 RF 1B
+Libre
+IN 1B
+Libre
+Libre
+Libre
 ###### Jueves ###### 
-IN 1B
+Libre
+Libre
+Libre
+Libre
+Libre
 LE 1B
-RF 1A
 Libre
-Libre
-Libre
-###### Viernes ###### 
 RF 1B
+###### Viernes ###### 
 Libre
-IN 1B
+LE 1B
+Libre
+Libre
+Libre
 Libre
 Libre
 Libre
 Horario del profesor MaJo
 ###### Lunes ###### 
+MA 1A
+Libre
+Libre
+Libre
 MA 1B
-Libre
-Libre
 Libre
 Libre
 Libre
 ###### Martes ###### 
 Libre
 Libre
-MA 1B
+Libre
+Libre
+Libre
 MA 1A
 Libre
 Libre
 ###### Miercoles###### 
-MA 1A
 Libre
+Libre
+Libre
+MA 1A
 Libre
 Libre
 Libre
 Libre
 ###### Jueves ###### 
-Libre
-MA 1B
-Libre
 MA 1A
 Libre
 Libre
+Libre
+Libre
+Libre
+Libre
+MA 1B
 ###### Viernes ###### 
 Libre
 Libre
-MA 1B
-MA 1A
 Libre
+Libre
+Libre
+Libre
+MA 1B
 Libre
 Horario del profesor A.Fa
 ###### Lunes ###### 
@@ -473,65 +603,85 @@ Libre
 Libre
 Libre
 Libre
-F 4C
-###### Martes ###### 
-CN 2B
-F 4C
 Libre
+CN 2B
+TE 2B
+###### Martes ###### 
+Libre
+F 4C
+CN 2B
 F 3A
+F 3C
+Libre
 Libre
 Libre
 ###### Miercoles###### 
+F 4C
 Libre
 Libre
 Libre
 Libre
-CN 2B
 Libre
+Libre
+CN 2A
 ###### Jueves ###### 
+Libre
+Libre
 CN 2A
 Libre
+Libre
+TE 2B
 Libre
 CN 2B
-TE 2B
-Libre
 ###### Viernes ###### 
-Libre
 CN 2A
-TE 2B
 Libre
-F 3C
+Libre
+Libre
+Libre
+Libre
+Libre
 Libre
 Horario del profesor MRos
 ###### Lunes ###### 
 Libre
-B 3C
 Libre
+B 3A
+CN 1B
+CN 1A
 Libre
 Libre
 Libre
 ###### Martes ###### 
-CN 1A
-Libre
-CN 1B
 Libre
 Libre
 Libre
-###### Miercoles###### 
 Libre
-B 3A
-CN 1B
 Libre
-CN 1A
+Libre
 B 3C
+CN 1B
+###### Miercoles###### 
+CN 1B
+CN 1A
+Libre
+Libre
+Libre
+Libre
+B 3C
+LI 1A
 ###### Jueves ###### 
 Libre
-CN 1B
-CN 1A
+Libre
+Libre
+Libre
 Libre
 B 3A
+CN 1A
 Libre
 ###### Viernes ###### 
+Libre
+Libre
 Libre
 Libre
 Libre
@@ -542,24 +692,30 @@ Horario del profesor May
 ###### Lunes ###### 
 Libre
 Libre
+Libre
+Libre
+Libre
+Libre
+Libre
 GE 3A
-Libre
-Libre
-Libre
 ###### Martes ###### 
 Libre
 Libre
-Libre
 GE 3A
+Libre
+Libre
+Libre
 Libre
 Libre
 ###### Miercoles###### 
-Libre
-Libre
-Libre
-Libre
-Libre
 GE 3A
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
 ###### Jueves ###### 
 Libre
 Libre
@@ -567,7 +723,11 @@ Libre
 Libre
 Libre
 Libre
+Libre
+Libre
 ###### Viernes ###### 
+Libre
+Libre
 Libre
 Libre
 Libre
@@ -576,7 +736,9 @@ Libre
 Libre
 Horario del profesor Seba
 ###### Lunes ###### 
+Libre
 MA 3A
+Libre
 Libre
 Libre
 Libre
@@ -589,21 +751,29 @@ Libre
 Libre
 MA 3A
 Libre
+Libre
+Libre
 ###### Miercoles###### 
 Libre
 Libre
 Libre
-MA 3A
 Libre
+Libre
+Libre
+MA 3A
 Libre
 ###### Jueves ###### 
 Libre
 Libre
 Libre
+Libre
+Libre
+Libre
+Libre
 MA 3A
-Libre
-Libre
 ###### Viernes ###### 
+Libre
+Libre
 Libre
 Libre
 Libre
@@ -613,19 +783,25 @@ Libre
 Horario del profesor Rica
 ###### Lunes ###### 
 Libre
+Libre
+Libre
+Libre
+Libre
 LE 4A
-Libre
-Libre
 Libre
 Libre
 ###### Martes ###### 
 Libre
+Libre
+LE 4A
 LE 1A
 Libre
 Libre
 Libre
 Libre
 ###### Miercoles###### 
+Libre
+Libre
 Libre
 LE 1A
 Libre
@@ -634,38 +810,48 @@ Libre
 Libre
 ###### Jueves ###### 
 Libre
+Libre
 LE 4A
-Libre
-Libre
-Libre
 LE 1A
+Libre
+Libre
+Libre
+Libre
 ###### Viernes ###### 
 Libre
 Libre
 Libre
+Libre
 LE 1A
-LE 4A
+Libre
+Libre
 Libre
 Horario del profesor Fern
 ###### Lunes ###### 
+RE 2B
+Libre
+RE 2A
+RE 3C
+Libre
+Libre
+Libre
+RE 3B
+###### Martes ###### 
+Libre
+Libre
+RE 4D
+Libre
+RE 4A
+RE 1A
+Libre
+RE 3A
+###### Miercoles###### 
+RE 3D
+Libre
+RE 1B
 Libre
 Libre
 RE 4B
-RE 3A
-RE 2A
-RE 4D
-###### Martes ###### 
-Libre
-RE 3C
-Libre
-RE 1A
-RE 2B
-RE 1B
-###### Miercoles###### 
-RE 3D
-RE 3B
-Libre
-RE 4A
 Libre
 RE 4C
 ###### Jueves ###### 
@@ -675,7 +861,11 @@ Libre
 Libre
 Libre
 Libre
+Libre
+Libre
 ###### Viernes ###### 
+Libre
+Libre
 Libre
 Libre
 Libre
@@ -685,72 +875,92 @@ Libre
 Horario del profesor Elvi
 ###### Lunes ###### 
 MA 2B
-AC 3D
+Libre
+Libre
+Libre
+Libre
 MA 2A
-Libre
-Libre
-Libre
+AC 3B
+AC 3D
 ###### Martes ###### 
+PR 4C
+Libre
+Libre
 Libre
 Libre
 AC 3D
-Libre
 Libre
 Libre
 ###### Miercoles###### 
-AC 3B
 Libre
-MA 2B
 Libre
+Libre
+Libre
+MA 2A
 AC 3D
+AC 3B
 Libre
 ###### Jueves ###### 
 Libre
 Libre
 Libre
-AC 3B
+MA 2A
+AC 3D
 Libre
+AC 3B
 Libre
 ###### Viernes ###### 
-PR 4C
+AC 3D
+Libre
+Libre
+Libre
+Libre
+Libre
+Libre
 AC 3B
-Libre
-Libre
-Libre
-Libre
 Horario del profesor Mano
 ###### Lunes ###### 
-EP 1A
-Libre
-T 3C
-EP 2A
-EP 1B
-Libre
-###### Martes ###### 
 EP 4A
 Libre
 Libre
+Libre
+T 3C
+EP 4C
 EP 4D
-T 3A
+Libre
+###### Martes ###### 
+Libre
+Libre
+Libre
+Libre
+EP 4C
+EP 4B
+T 3C
 EP 2B
 ###### Miercoles###### 
 EP 4D
-T 3C
-EP 4C
+Libre
+EP 4B
+Libre
+Libre
+Libre
+Libre
+EP 1B
+###### Jueves ###### 
+Libre
+Libre
 Libre
 Libre
 EP 4A
-###### Jueves ###### 
+EP 2A
 Libre
-EP 4B
+EP 1B
+###### Viernes ###### 
+T 3A
+Libre
 Libre
 EP 4C
 Libre
-Libre
-###### Viernes ###### 
-EP 2B
-Libre
-EP 4B
 Libre
 EP 2A
 EP 4A
@@ -758,26 +968,34 @@ Horario del profesor Ric
 ###### Lunes ###### 
 Libre
 Libre
+LE 2B
 Libre
 Libre
 Libre
 LE 2A
+Libre
 ###### Martes ###### 
 Libre
+Libre
 LE 2A
 Libre
-LE 2B
+Libre
+Libre
 Libre
 Libre
 ###### Miercoles###### 
 Libre
 LE 2A
 Libre
-LE 2B
 Libre
+Libre
+Libre
+LE 2B
 Libre
 ###### Jueves ###### 
+Libre
 LE 2B
+LE 2A
 Libre
 Libre
 Libre
@@ -785,7 +1003,9 @@ Libre
 Libre
 ###### Viernes ###### 
 Libre
-LE 2A
+Libre
+Libre
+Libre
 Libre
 Libre
 LE 2B
