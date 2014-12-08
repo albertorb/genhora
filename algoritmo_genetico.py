@@ -26,13 +26,12 @@ from collections import defaultdict
 import tkinter as tk
 from tkinter import filedialog
 from collections import defaultdict
-import time
-import threading
-# from mpi4py import MPI
+#import time
+#import threading
 
 # Inicializacion del programa
-NUM_GENERATIONS = 200
-TAM_POPULATION = 2000
+NUM_GENERATIONS = 100
+TAM_POPULATION = 500
 PROB_MUTATION = 10
 # # atributos metodo selection
 PERC_POP = 100
@@ -739,7 +738,6 @@ def write_sort_res(something):
 
 ROOT = tk.Tk()
 
-
 def run_algorithm():
     prueba(filedialog.askopenfilename(initialdir="", title="choose your assignments file"))
 
@@ -748,10 +746,24 @@ def startx():
     # # base window
 
     ROOT.title("Generador de horarios")
-    ROOT.minsize(300, 300)
-    ROOT.geometry("400x400")
-    btn_run = tk.Button(ROOT, text="Generate schedule", command=run_algorithm)
-    btn_run.pack()
+    ROOT.minsize(300, 200)
+    ROOT.geometry("400x300")
+
+    ## to fill rows ##
+    #f1 = tk.Frame(ROOT,height=50,width=50)
+    #f1.pack_propagate(0) # do not 
+    #f1.grid(row=2,column=0)
+    #f1.pack()
+    btn_help = tk.Button(ROOT,text="Help")
+    btn_help.pack(side=tk.TOP)
+ 
+    ## to fill rows ##
+    f = tk.Frame(ROOT,height=200,width=200)
+    f.pack_propagate(0) # do not shrink
+    f.grid(row=2,column=1)
+    f.pack()
+    btn_run = tk.Button(f, text="Generate schedule", command=run_algorithm)
+    btn_run.pack(fill=tk.BOTH, expand=1)
     ROOT.mainloop()
 
     ## base window
