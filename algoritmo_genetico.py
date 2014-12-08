@@ -741,6 +741,17 @@ ROOT = tk.Tk()
 def run_algorithm():
     prueba(filedialog.askopenfilename(initialdir="", title="choose your assignments file"))
 
+def run_help():
+    help = tk.Tk()
+    help.title("Help")
+    help.minsize(300, 200)
+    help.geometry("400x300")
+    T = tk.Text(help,height=2,width=30)
+    T.pack()
+    T.insert(tk.END, "")
+    help.mainloop()
+
+
 
 def startx():
     # # base window
@@ -754,7 +765,7 @@ def startx():
     #f1.pack_propagate(0) # do not 
     #f1.grid(row=2,column=0)
     #f1.pack()
-    btn_help = tk.Button(ROOT,text="Help")
+    btn_help = tk.Button(ROOT,text="Help", command=run_help)
     btn_help.pack(side=tk.TOP)
  
     ## to fill rows ##
