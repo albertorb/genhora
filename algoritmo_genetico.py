@@ -31,7 +31,7 @@ from collections import defaultdict
 
 # Inicializacion del programa
 NUM_GENERATIONS = 100
-TAM_POPULATION = 500
+TAM_POPULATION = 1000
 PROB_MUTATION = 10
 # # atributos metodo selection
 PERC_POP = 100
@@ -115,6 +115,7 @@ def initialize(FILENAME):
         n += 1
     SUBJECTS_NUMBER = SUBJECTS.__len__()
     # print(PARSE_ASSIGNMENTS)
+    
     for key in ASSIGNMENTS.keys():
         PROFESSOR_NUMBER += 1
     return ASSIGNMENTS
@@ -613,6 +614,7 @@ def selection(pop):
 
 
 def prueba(FILENAME):
+
     asgmnts = initialize(FILENAME)
     count = NUM_GENERATIONS
     res = initPopulation(asgmnts)
@@ -633,7 +635,8 @@ def prueba(FILENAME):
         # selected = selection(res_n)
 
         res_n = sorted(res_n, key=cmp_elite)
-        res = res[:5] + res_n[:-5]  # Nosquedamos con los 5 mejores de la anterior y el resto de la nueva encontrada, así siempre mantenmos las 5 mejores soluciones encontradas
+        len_aux = int(res.__len__() / 10)
+        res = res[:len_aux] + res_n[:-5]  # Nosquedamos con los 5 mejores de la anterior y el resto de la nueva encontrada, así siempre mantenmos las 5 mejores soluciones encontradas
         print('Proceso de seleccion finalizado')
         res = sorted(res, key=cmp_elite)
         fitn = fitness(res[0])
@@ -668,22 +671,32 @@ def prueba(FILENAME):
     f1.close()
     write_sort_res(mejoresInd[0])
     f = open('scheduleByTeacher.txt', 'w')
+
     print(mejoresInd[0])
     pheno = phenotype(mejoresInd[0])
     for prof, subj in pheno.items():
+        #x = open('horarios individuales/' + prof + '.txt', 'w')
+        #x.write('Horario del profesor ' + str(prof) + '\n')
         f.write('Horario del profesor ' + str(prof) + '\n')
         for num in range(subj.__len__()):
             if num == 0:
                 f.write('###### Lunes ###### \n')
+                #x.write('###### Lunes ###### \n')
             if num == 6:
                 f.write('###### Martes ###### \n')
+                #x.write('###### Martes ###### \n')
             if num == 12:
                 f.write('###### Miercoles###### \n')
+                #x.write('###### Miercoles###### \n')
             if num == 18:
                 f.write('###### Jueves ###### \n')
+                #x.write('###### Jueves ###### \n')
             if num == 24:
                 f.write('###### Viernes ###### \n')
+                #x.write('###### Viernes ###### \n')
             f.write(str(subj[num]) + '\n')
+            #x.write(str(subj[num]) + '\n')
+            #x.close()
 
     f.close()
 
@@ -693,7 +706,7 @@ def prueba(FILENAME):
     if incompatibilidades == 0:
         print('No se pisan horarios entre grupos')
     else:
-        print('Se pisan ' + str(incompatibilidades) + ' horarios entre grupos!!!')
+        print('Se pisan ' + str(int(incompatibilidades/2)) + ' horarios entre grupos!!!')
 
 def write_sort_res(something):
     monday = something[0::5]
@@ -739,7 +752,18 @@ def write_sort_res(something):
 ROOT = tk.Tk()
 
 def run_algorithm():
-    prueba(filedialog.askopenfilename(initialdir="", title="choose your assignments file"))
+    file = filedialog.askopenfilename(initialdir="", title="choose your assignments file")
+    #running = tk.Tk()
+    #running.title("Working...")
+    #running.minsize(10,10)
+    #running.geometry("150x150")
+    #r = tk.Text(running, height=2,width=100)
+    #r.insert(tk.END," Please, grab a coffe or two while we are working ")
+    #r.pack()
+
+    #r.insert(tk.END, " Please, take a coffe or two while we are working ;)")
+    prueba(file)
+    #r.insert(tk.END," Your schedule has been generated ! ")
 
 def run_help():
     help = tk.Tk()
@@ -756,7 +780,7 @@ def run_help():
 def startx():
     # # base window
 
-    ROOT.title("Generador de horarios")
+    ROOT.title("GENHORA")
     ROOT.minsize(300, 200)
     ROOT.geometry("400x300")
 
@@ -765,8 +789,8 @@ def startx():
     #f1.pack_propagate(0) # do not 
     #f1.grid(row=2,column=0)
     #f1.pack()
-    btn_help = tk.Button(ROOT,text="Help", command=run_help)
-    btn_help.pack(side=tk.TOP)
+    #btn_help = tk.Button(ROOT,text="Help", command=run_help)
+    #btn_help.pack(side=tk.TOP)
  
     ## to fill rows ##
     f = tk.Frame(ROOT,height=200,width=200)
@@ -775,6 +799,14 @@ def startx():
     f.pack()
     btn_run = tk.Button(f, text="Generate schedule", command=run_algorithm)
     btn_run.pack(fill=tk.BOTH, expand=1)
+
+    version = tk.Frame(ROOT, height=200, width=200)
+    version.pack_propagate(0)
+    version.grid(row=3,column=1)
+    version.pack()
+    version_text = tk.Label(version,text= "BETA v1")
+    version_text.pack(fill=tk.BOTH, expand=1, side=tk.BOTTOM)
+    
     ROOT.mainloop()
 
     ## base window
